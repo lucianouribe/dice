@@ -22,7 +22,7 @@ require 'pry'
   "Don't beg, you're done!",
   'Stop it, you look ridiculus',
   'Grow up and accept your fate!',
-  'bye #{@name}'
+  'byeeee'
 ]
 @user_list = []
 @sum_of_all_arrays = []
@@ -80,9 +80,14 @@ end
 
 def help_me
   puts "Add an answer"
+  @sum_of_all_arrays << @answer_list.concat(@user_list)
   answer = gets.strip
-  @user_list << answer
-  puts @user_list
+  if @sum_of_all_arrays.flatten.include?(answer) == true
+    puts "It's already on the list"
+  else
+    @user_list << answer
+    puts @user_list
+  end
   menu
 end
 
@@ -90,7 +95,7 @@ def print_options
   @answer_list.flatten
   @user_list.flatten
   @sum_of_all_arrays << @answer_list.concat(@user_list)
-  File.open("answers.txt", "w+") do |f|
+  File.open("answers.txt", "w") do |f|
   f.puts(@sum_of_all_arrays)
   end
   puts @sum_of_all_arrays
