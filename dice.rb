@@ -18,11 +18,11 @@ require 'pry'
 ]
 @bye_array = [
   'Trying to leave the Digi Fortune in that harsh way has condemned your soul to infinite years of torture in hell',
-  # "In fact, say goodbye to your soul. Now it's mine!",
-  # "Don't beg, you're done!",
-  # 'Stop it, you look ridiculus',
-  # 'Grow up and accept your fate!',
-  # 'bye #{@name}'
+  "In fact, say goodbye to your soul. Now it's mine!",
+  "Don't beg, you're done!",
+  'Stop it, you look ridiculus',
+  'Grow up and accept your fate!',
+  'bye #{@name}'
 ]
 @user_list = []
 @sum_of_all_arrays = []
@@ -33,37 +33,79 @@ puts "Hello #{@name} this is DigiFortune teller here"
 puts "I know the answers to everything!!"
 
 def start
-  puts "\nJust ask whatever you want to know or if you are done with me, just type (q)uit or colaborate if you want to add answers or reset"
+  puts "\nJust ask whatever you want to know or type (menu) for more options"
   print ">> "
   question = gets.strip
-  if question == ""
+  if question == ''
     puts "Don't be shy, I don't bite!"
     puts "Do it again... Ask, ask! I'm almost answering myself!"
     start
-  elsif
-    question.downcase.include?('q')
-    puts "Come on #{@name} Are you joking?"
-    puts "If you want to leave me you will have to ask it kindly"
-    puts "Tell me in good manner that you want to leave"
-    print ">> "
-    variable_with_no_use = gets
-    @list = @funny_list
-    roll_the_dice
-    chao
-  elsif question == 'cola'
-    puts "Add an answer"
-    answer = gets.strip
-    @user_list << answer
-    puts @user_list
-    start
-  elsif question == 'reset'
-    @user_list.clear
-    start
+  elsif question == 'menu'
+    menu
   else
-    @sum_of_all_arrays << @answer_list.concat(@user_list)
-    @list = @sum_of_all_arrays.flatten
-    roll_the_dice
+    concatenating
   end
+end
+
+def menu
+  puts "|q| quit |c| colaborate |r| reset |p| print |b| back"
+  option = gets.strip.downcase
+  case option
+  when 'q'
+    quit
+  when 'c'
+    help_me
+  when 'r'
+    reset
+  when 'b'
+    start
+  when 'p'
+    print_options
+  else
+    puts "Not a valid choice"
+    menu
+  end
+end
+
+def quit
+  puts "Come on #{@name} Are you joking?"
+  puts "If you want to leave me you will have to ask it kindly"
+  puts "Tell me in good manner that you want to leave"
+  print ">> "
+  variable_with_no_use = gets
+  @list = @funny_list
+  roll_the_dice
+  chao
+end
+
+def help_me
+  puts "Add an answer"
+  answer = gets.strip
+  @user_list << answer
+  puts @user_list
+  menu
+end
+
+def print_options
+  @answer_list.flatten
+  @user_list.flatten
+  @sum_of_all_arrays << @answer_list.concat(@user_list)
+  File.open("answers.txt", "w+") do |f|
+  f.puts(@sum_of_all_arrays)
+  end
+  puts @sum_of_all_arrays
+  menu
+end
+
+def reset
+  @user_list.clear
+  start
+end
+
+def concatenating
+  @sum_of_all_arrays << @answer_list.concat(@user_list)
+  @list = @sum_of_all_arrays.flatten
+  roll_the_dice
 end
 
 def chao
@@ -73,7 +115,7 @@ end
 
 def roll_the_dice
   numbers = [0..9]
-  puts @list.shuffle[rand(8)]
+  puts @list.shuffle[rand(9)]
 end
 
 while go = true
