@@ -1,5 +1,5 @@
 require 'pry'
-
+# ARRAY LIST
 @answer_list = [
   'Go for it',
   'Really?',
@@ -26,12 +26,12 @@ require 'pry'
 ]
 @user_list = []
 @sum_of_all_arrays = []
-
+#  FORTUNE TRICK
 @name = Dir.pwd.split('/Users')[1].split('/')[1]
-
+# INTRO
 puts "Hello #{@name} this is DigiFortune teller here"
 puts "I know the answers to everything!!"
-
+# THE QUESTION FUNCTION
 def start
   puts "\nJust ask whatever you want to know or type (menu) for more options"
   print ">> "
@@ -46,7 +46,7 @@ def start
     concatenating
   end
 end
-
+# SUBMENU OPTIONS
 def menu
   puts "|q| quit |c| colaborate |r| reset |p| print |b| back"
   option = gets.strip.downcase
@@ -66,7 +66,7 @@ def menu
     menu
   end
 end
-
+# QUIT WITH FUNNY/ANNOYING GOODBYE OPTIONS
 def quit
   puts "Come on #{@name} Are you joking?"
   puts "If you want to leave me you will have to ask it kindly"
@@ -77,7 +77,7 @@ def quit
   roll_the_dice
   chao
 end
-
+# NEW ANSWERS AND CHECKING IF THEY ALREADY EXIST
 def help_me
   puts "Add an answer"
   @sum_of_all_arrays << @answer_list.concat(@user_list)
@@ -90,7 +90,7 @@ def help_me
   end
   menu
 end
-
+# EXPORT AND PRINTING FUNCTION OF CONCATENATED ARRAYS
 def print_options
   @answer_list.flatten
   @user_list.flatten
@@ -101,28 +101,28 @@ def print_options
   puts @sum_of_all_arrays
   menu
 end
-
+# RESET ARRAY FUNCTION
 def reset
   @user_list.clear
   start
 end
-
+# CONCATENATING ARRAYS FUNCTIONS
 def concatenating
   @sum_of_all_arrays << @answer_list.concat(@user_list)
   @list = @sum_of_all_arrays.flatten
   roll_the_dice
 end
-
+# GOODBYE FUNCTION
 def chao
-  @bye_array.each {|chao_message| puts chao_message; sleep 2}
+  @bye_array.each { |chao_message| puts chao_message; sleep 2 }
   exit
 end
-
+# TRIPLE MIXED RANDOM NUMBERS (THE DICE OF FORTUNE)
 def roll_the_dice
   numbers = [0..9]
-  puts @list.shuffle[rand(9)]
+  puts @list.shuffle[rand(5) + rand(5)]
 end
-
+#START
 while go = true
   start
 end
