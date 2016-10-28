@@ -1,4 +1,3 @@
-require 'pry'
 # ARRAY LIST
 @answer_list = [
   'Go for it',
@@ -123,6 +122,6 @@ def roll_the_dice
   puts @list.shuffle[rand(5) + rand(5)]
 end
 #START
-while go = true
+while true
   start
 end
