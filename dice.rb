@@ -95,7 +95,7 @@ def print_options
   @user_list.flatten
   @sum_of_all_arrays << @answer_list.concat(@user_list)
   File.open("answers.txt", "w") do |f|
-  f.puts(@sum_of_all_arrays)
+    f.puts(@sum_of_all_arrays)
   end
   puts @sum_of_all_arrays
   menu
