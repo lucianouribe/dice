@@ -1,0 +1,14 @@
+<form class="ball_grid" method="post" action="/add">
+  <input class="input" name="new_input" placeholder="Add new funny answers" required/><!--
+  --><button class="ask_ball" type="submit" name="submit" value="enter" />Enter</button>
+</form>
+<div class="ball_grid">
+  <%# $sum_of_all_arrays << $answer_list.concat(@user_list) %>
+  <%# if $sum_of_all_arrays.flatten.include?(answer) == true %>
+  <%#<p class="mini_q"><%= "Its already on the list" %>
+  <%# else %>
+  <%#  @user_list << @frase %>
+  <p class="mini_q"><%= @frase %></p>
+  <%# end %>
+  <a href="./" class="output">Click me to go back</a>
+</div>
