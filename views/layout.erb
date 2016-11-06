@@ -8,14 +8,10 @@
   <body>
     <header class="grid">
       <h1>The Magic Eight Ball</h1>
-      <hv >
       <h3>Ask the ball about all your anxieties,</h3>
       <h3>fears, phobias, secrets and desires</h3>
       <h2>It will tell you how to proceed in life!</h2>
-      <form method="post" action="/find">
-        <input class="input" question="user_input" placeholder="Unburden yourself" required/><!--
-        --><button class="ask_ball" type="submit" name="submit" value="Ask Ball" />Ask Ball</button>
-      </form>
+      
     </header>
     <div class="grid">
       <%= yield %>

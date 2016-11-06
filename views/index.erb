@@ -1,3 +1,20 @@
+<form method="post" action="/">
+  <input class="input" name="user_input" placeholder="Unburden yourself" required/><!--
+  --><button class="ask_ball" type="submit" name="submit" value="Ask Ball" />Ask Ball</button>
+</form>
 <div class="grid">
-  <p class="output">Hello, how are you? good? I'm fine really, super super fine<%= @name %></p>
+  <p class="mini_q"><%= @question %></p>
+  <% if @question %>
+  <% @answer_list = [
+    'Go for it',
+    'Really?',
+    'Are you serious?',
+    'Yes!',
+    'No!',
+    'Maybe! It depends on your objectives',
+    'What does your concience say?',
+    'If your mother lets you, then you can'
+  ] %>
+  <p class="output"><%= @answer_list.sample %> </p>
+  <%end%>
 </div>
