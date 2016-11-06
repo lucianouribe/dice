@@ -11,3 +11,9 @@ post '/' do
   @question = pregunta
   erb :index
 end
+
+# Not found page
+not_found do
+  status 404
+  erb :not_found
+end

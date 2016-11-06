@@ -1,9 +1,9 @@
-<form method="post" action="/">
+<form class="ball_grid" method="post" action="/">
   <input class="input" name="user_input" placeholder="Unburden yourself" required/><!--
   --><button class="ask_ball" type="submit" name="submit" value="Ask Ball" />Ask Ball</button>
 </form>
-<div class="grid">
-  <p class="mini_q"><%= @question %></p>
+<div class="ball_grid">
+  <p class="mini_q"><%= @question %>?</p>
   <% if @question %>
   <% @answer_list = [
     'Go for it',

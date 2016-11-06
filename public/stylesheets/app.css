@@ -70,6 +70,7 @@ body {
   background-color: #fafafa;
   color: #191919;
   font-family: "Raleway", helvetica, arial, sans-serif;
+	height: 100vh;
 }
 /*
 ========================
@@ -127,13 +128,26 @@ input {
   margin-top: 20px;
   height: 31px;
 }
+
+/*
+=========================
+INDEX | INPUT
+=========================
+*/
+.ball_grid {
+	margin: 0 auto;
+	text-align: center;
+  min-width: 1024px;
+  max-width: 80%;
+}
+
 .input {
   width: 40%;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   border: 0.5px solid #731206;
   border-right: 0;
-  padding-left: 20px;
+  padding-left: 15px;
   margin-right: 0;
 }
 .ask_ball{
@@ -151,23 +165,22 @@ input {
 }
 /*
 =========================
-BALL
+INDEX | BALL
 =========================
 */
-.bola {
-  background-color: #fafafa;
-  width: 50%;
 
+.bola {
+  width: 48%;
 }
-.grid .bola {
+.ball_grid .bola {
   z-index: 0;
   position: fixed;
-  top: 40vh;
-  left: 25%;
+  bottom: -200px;
+  left: 26%;
 }
 /*
 =========================
-INDEX
+INDEX | OUTPUT
 =========================
 */
 .output {
@@ -177,20 +190,21 @@ INDEX
   line-height: 2.5rem;
 }
 
-.grid .output {
+.ball_grid .output {
   z-index: 4;
   position: fixed;
-  top: 80vh;
+  bottom: 100px;
   left: 38%;
 }
-/*.mini_q {
+.mini_q {
+	z-index: 5;
   width: 24%;
   color: green;
   font-size: 1rem;
   line-height: 2.5rem;
 }
-.grid .mini_q {
+.ball_grid .mini_q {
   position: fixed;
-  top: 79vh;
+  bottom: 200px;
   left: 38%;
-}*/
+}
