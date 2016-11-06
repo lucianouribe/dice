@@ -1,0 +1,184 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*
+========================
+BOX-SIZING
+========================
+*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing: border-box;
+}
+/*
+=========================
+COLOR GAMA
+=========================
+
+white = #fafafa
+dark grey = #191919
+dark red = #731206
+/*
+=========================
+BODY
+=========================
+*/
+body {
+  background-color: #fafafa;
+  color: #191919;
+  font-family: "Raleway", helvetica, arial, sans-serif;
+}
+/*
+========================
+TYPOGRAPHY
+========================
+*/
+h1 {
+	font-size: 4rem;
+	letter-spacing: .2rem;
+	font-weight: 100;
+}
+h2 {
+	font-size: 2rem;
+	line-height: 3rem;
+	letter-spacing: .2em;
+	font-weight: 300;
+}
+h3 {
+	font-size: 1.5rem;
+  line-height: 1.5em;
+	letter-spacing: .3em;
+	font-weight: 100;
+}
+
+p {
+	font-size: 12px;
+	line-height: 1.5rem;
+	letter-spacing: .05em;
+	font-weight: 200;
+}
+/*
+=========================
+HEADINGS
+=========================
+*/
+.grid {
+  text-align: center;
+  min-width: 1024px;
+  max-width: 80%;
+}
+header {
+
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+header h1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid #731206;
+}
+header h2 {
+  border-bottom: 0.5px solid #731206;
+}
+input {
+  margin-top: 20px;
+  height: 31px;
+}
+.input {
+  width: 40%;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border: 0.5px solid #731206;
+  border-right: 0;
+  padding-left: 20px;
+  margin-right: 0;
+}
+.ask_ball{
+  width: 100px;
+  padding: 8px 20px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #fafafa;
+  border: 0.5px solid #731206;
+}
+.ask_ball:hover {
+  background-color: #731206;
+  color: #fafafa;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+/*
+=========================
+BALL
+=========================
+*/
+.bola {
+  background-color: #fafafa;
+  width: 50%;
+
+}
+.grid .bola {
+  z-index: 0;
+  position: fixed;
+  top: 40vh;
+  left: 25%;
+}
+/*
+=========================
+INDEX
+=========================
+*/
+.output {
+  width: 24%;
+  color: #731206;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.grid .output {
+  z-index: 4;
+  position: fixed;
+  top: 80vh;
+  left: 38%;
+}
